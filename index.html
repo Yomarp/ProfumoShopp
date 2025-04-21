@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfumes Vintage</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f0e7 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      color: #4b3e2e;
+    }
+    header {
+      background-color: #c1b49a;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #4b3e2e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 30px;
+    }
+    .product {
+      border: 1px solid #b2a186;
+      padding: 20px;
+      margin: 10px 0;
+      background-color: #fdfaf5;
+    }
+    button {
+      background-color: #a7c4a0;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    #cart {
+      background-color: #eee9dc;
+      padding: 20px;
+      border: 1px solid #b2a186;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Perfumes Vintage</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#producto">Producto</a>
+      <a href="#carrito">Carrito</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="inicio">
+    <h2>Bienvenido</h2>
+    <p>Explora nuestra colección de perfumes populares diseñados para jóvenes entre 16 y 22 años, con un toque vintage y natural que te encantará.</p>
+  </section>
+
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>Soy una persona apasionada por las fragancias. Decidí crear este espacio para compartir perfumes que reflejan personalidad, estilo y esencia natural.</p>
+  </section>
+
+  <section id="producto">
+    <h2>Productos</h2>
+    <div class="product">
+      <h3>Perfume Aurora</h3>
+      <p>Fresco, floral y juvenil.</p>
+      <button onclick="addToCart('Perfume Aurora')">Agregar al carrito</button>
+    </div>
+    <div class="product">
+      <h3>Perfume Brisa</h3>
+      <p>Aroma suave con notas naturales.</p>
+      <button onclick="addToCart('Perfume Brisa')">Agregar al carrito</button>
+    </div>
+  </section>
+
+  <section id="carrito">
+    <h2>Carrito de compras</h2>
+    <div id="cart"></div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Teléfono: 6892760597</p>
+    <p>Email: yandre7280@gmail.com</p>
+  </section>
+
+  <script>
+    const cart = [];
+    function addToCart(product) {
+      cart.push(product);
+      displayCart();
+    }
+    function displayCart() {
+      const cartDiv = document.getElementById('cart');
+      if (cart.length === 0) {
+        cartDiv.innerHTML = '<p>Tu carrito está vacío.</p>';
+      } else {
+        cartDiv.innerHTML = '<ul>' + cart.map(item => `<li>${item}</li>`).join('') + '</ul>';
+      }
+    }
+  </script>
+</body>
+</html>
